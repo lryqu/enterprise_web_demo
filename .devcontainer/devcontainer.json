@@ -1,0 +1,15 @@
+{
+  "name": "Slate & Timber Co.",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "remoteUser": "node",
+  "forwardPorts": [3000, 5432],
+  "postCreateCommand": "npm ci",
+  "postStartCommand": "sh .devcontainer/wait-for-db.sh && npx drizzle-kit push",
+  "customizations": {
+    "vscode": {
+      "extensions": ["dbaeumer.vscode-eslint", "bradlc.vscode-tailwindcss"]
+    }
+  }
+}
